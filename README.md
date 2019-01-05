@@ -1,90 +1,53 @@
-## Branches
-
-```master``` == main client + redux + firebase + react 
-
-```stellar-stripe``` == stripe connected to SEAMs
-
-```client-pages-no-auth``` == Seamless web app, Create React App - v2.1.1 boilerplate with integration of Redux, React Router, Redux thunk & Reactstrap(Bootstrap v4) + stopped when I couldn't get the auth wrapper working well
-
-```react-flask-backend``` == pagedraw UI + React + Flask as backend + Separation of Client and Server
-
-```failed-redux-react-firebase-generator``` === Attempt to use [React Firebase (Redux optional) yeoman generator](https://github.com/prescottprue/generator-react-firebase) to solve the connection between redux and firebase and page auth wrappers
+#React-Redux-Firebase-Boilerplate
+ 
+#### Author: [Whitney Griffith - ImpactWhit](https://www.linkedin.com/in/whitneygriffith/)
 
 
-## Phases
-[x] Transitioning to              [React-Redux-Node-Firebase Boilerplate](https://github.com/prescottprue/generator-react-firebase/tree/master/examples/react-firebase-redux)
-* Placed this on pause because it was way too complicated 
-
-[x] Built from scratch React-Redux-Firebase-Router [Tutorial1](https://dusty.phillips.codes/2018/08/25/react-redux-firebase-with-firestore-tutorial/)
+## Built from: 
+React-Redux-Firebase-Router [Tutorial1](https://dusty.phillips.codes/2018/08/25/react-redux-firebase-with-firestore-tutorial/)
 [Tutorial2](https://medium.com/quick-code/how-to-integrate-react-redux-and-firebase-in-3-simple-steps-c44804a6af38)
 [Tutorial3](https://medium.com/quick-code/adding-authentication-to-react-redux-firebase-app-f0efcb1c519a)
-
-[ ] [Combine with our Client](https://github.com/whitneygriffith/seamlessmoney/tree/client-pages-no-auth)
-
-[ ] Re-edit each Page Functionalities
-
-[ ] Integrate with Stripe + Stellar Anchor for our TT Anchor
-
-[ ] Integrate Stronghold APIs for USD Anchor 
-
-[ ] React Native Integration for Mobile Clients
-
-## Internal Company Documents
-
-[Application Config Keys](http://bit.ly/AppConfigs)
-
-[UI Builder - Pagedraw](https://pagedraw.io/)
+[UI Builder - Sketch & Pagedraw](https://pagedraw.io/)
 
 
 ## Instructions
 
 ### Starting the project
-* ```git clone https://github.com/whitneygriffith/seamlessmoney```
+* ```git clone https://github.com/whitneygriffith/react-redux-firebase```
 * ```git checkout -b client```
-* create ```src/config/dev.js```in main folder and populate it with the info from [Application Config Keys](http://bit.ly/AppConfigs)
+* create ```src/config/dev.js```in main folder and populate it with your personal configs from [Firebase](https://firebase.google.com/) in the following format:
+
+```
+export const FirebaseConfig = {
+    apiKey: "AIzaSyBnVQDfjkBkZfC7FcqsTpn8o7of45trmqs",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: ""
+};
+```
 * ```npm install```
 * ```npm start```
 
 ### Adding a new page
-- Edit the following:
-    - ```asyncRoutes.js```
-    - ```routes.js```
+Edit the following:
+- [App.js](../src/App.js)
+    - Import the new page ```import NewPageComponentName from "./components/PageComponentFolder";```
+    - Within the ```<div>``` tag embedded in ```<BrowserRouter>``` tag, add the following ```<Route exact path="/new_page_url" component={NewPageComponentName} />```
+To require Authentication to view a page: 
+- [App.js](../src/App.js)
+    - Within the ```<div>``` tag embedded in ```<BrowserRouter>``` tag, add the following ```<Route exact path="/new_page_url" component={requireAuth(NewPageComponentName)} />```
 
 
-## Video Walkthrough
-
-Here's a walkthrough of our development iterations:
-
-#### Iteration 1 
-<img src='https://imgur.com/28K9LCn.gif' title='Iteration 1' width='' alt='Video Walkthrough' />
-
-#### Senior Project Demo
-<img src='https://imgur.com/JMMH5CU.gif' title='Senior Project Demo' width='' alt='Video Walkthrough' />
-
-
-## Development TODOs
-
-### Authorizations
-[ ] In the Sign Up Flow prevent going back to past screens such as Full Name
-
-### Firebase
-[ ] Handle Firebase Sign In With Link CallBack using onAuthStateCHanged Listener
+### Firebase Additional Suggestions
+[ ] Implement Firebase Sign In With Link CallBack using onAuthStateChanged Listener
 [ ] Error Handling to display error to user from Firebase's Sign In, Sign Up and other function calls
-[ ] Sign Up email verification link is not sending to hotmail.com 
-
-### Home 
-
-[ ] Figure out how to return data from database such as userTag and picture to load on home screen
 
 
-### Sign Up
+### Sign Up Additional Suggestions
 [ ] Create input pattern validators for Email, Phone Number [Ref](https://www.w3schools.com/html/html_form_attributes.asp)
-[ ] Create function to check password1 and password2 is equal, error handling to tell user: password don't match and so on...
 
-### UI 
-[ ] Clean up css for ```login-password```
-[ ] Standardized CSS for all common components
-[ ] Consider switching color scheme to purple rgb(128,0,128) [Meaning](https://www.bourncreative.com/meaning-of-the-color-purple/)
 
 ## Production TODOs
 
