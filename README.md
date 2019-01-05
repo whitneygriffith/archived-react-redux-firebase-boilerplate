@@ -1,4 +1,4 @@
-#React-Redux-Firebase-Boilerplate
+# React-Redux-Firebase-Boilerplate
  
 #### Author: [Whitney Griffith - ImpactWhit](https://www.linkedin.com/in/whitneygriffith/)
 
