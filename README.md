@@ -14,7 +14,6 @@ React-Redux-Firebase-Router [Tutorial1](https://dusty.phillips.codes/2018/08/25/
 
 ### Starting the project
 * ```git clone https://github.com/whitneygriffith/react-redux-firebase```
-* ```git checkout -b client```
 * create ```src/config/dev.js```in main folder and populate it with your personal configs from [Firebase](https://firebase.google.com/) in the following format:
 
 ```
