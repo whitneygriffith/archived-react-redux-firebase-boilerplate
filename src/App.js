@@ -5,7 +5,7 @@ import LoginPassword from "./components/login-password";
 import Signup from "./components/signup";
 
 //Routing + Authorization
-import requireAuth from "./components/auth/requireAuth";
+import requireAuth from "auth/requireAuth";
 import { BrowserRouter, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchUser } from "./actions";
