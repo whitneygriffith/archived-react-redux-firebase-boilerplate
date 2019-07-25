@@ -43,6 +43,7 @@ To require Authentication to view a page:
 
 ### Firebase Additional Suggestions
 [ ] Implement Firebase Sign In With Link CallBack using onAuthStateChanged Listener
+
 [ ] Error Handling to display error to user from Firebase's Sign In, Sign Up and other function calls
 
 
